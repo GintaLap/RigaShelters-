@@ -12,6 +12,13 @@ public class Main {
         ulubeleAccount.newExpense("Food",200);
         ulubeleAccount.newExpense("Electricity", 10.5);
 
- // commit
+        Shelters ulubele = new Shelters("Ulubele", "Ozolaine", 20203333, "ulubele@ulubele.org",200, 87, "LV97HABA0551028353893");
+        Shelters dzīvniekuDraugs = new Shelters("Dzīvnieku Draugs", "Fridriha Candera iela 4", 67500491
+                , "DZD@LATNET.LV", 150, 100, "LV71HABA0551039535066");
+        Shelters labāsMājas = new Shelters("Labās Mājas", "Mežapurva iela 2", 26617636, "info@patversme.lv", 110,100, "LV95HABA0551003865018");
     }
+    Animal catCharlie = new Animal("cat", " Charlie", 3, "large", 2, " Ulubele", false, 3289, false, false);
 }
+
+
+
