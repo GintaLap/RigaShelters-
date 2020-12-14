@@ -89,4 +89,17 @@ public class Animal {
     public void setWalkable(boolean walkable) {
         isWalkable = walkable;
     }
+
+    public Animal(String type, String name, float age, String size, float timeInShelter, String assignedShelter, boolean needsSpecialTreatment, int id, boolean isAdopted, boolean isWalkable) {
+        this.type = type;
+        this.name = name;
+        this.age = age;
+        this.size = size;
+        this.timeInShelter = timeInShelter;
+        this.assignedShelter = assignedShelter;
+        this.needsSpecialTreatment = needsSpecialTreatment;
+        this.id = id;
+        this.isAdopted = isAdopted;
+        this.isWalkable = isWalkable;
+    }
 }
