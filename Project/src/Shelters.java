@@ -3,9 +3,27 @@ public class Shelters {
     private String address;
     private int number;
     private String email;
-    private static int maxAmountOfAnimals;
+    private int maxAmountOfAnimals;
     private int currentAmountOfAnimals;
     private String bankDetails;
+
+    public Shelters(String shelterName, String address, int number, String email, int maxAmountOfAnimals, int currentAmountOfAnimals, String bankDetails) {
+        this.shelterName = shelterName;
+        this.address = address;
+        this.number = number;
+        this.email = email;
+        this.maxAmountOfAnimals = maxAmountOfAnimals;
+        this.currentAmountOfAnimals = currentAmountOfAnimals;
+        this.bankDetails = bankDetails;
+    }
+
+    public int getMaxAmountOfAnimals() {
+        return maxAmountOfAnimals;
+    }
+
+    public void setMaxAmountOfAnimals(int maxAmountOfAnimals) {
+        this.maxAmountOfAnimals = maxAmountOfAnimals;
+    }
 
     public String getShelterName() {
         return shelterName;
@@ -39,13 +57,6 @@ public class Shelters {
         this.email = email;
     }
 
-    public static int getMaxAmountOfAnimals() {
-        return maxAmountOfAnimals;
-    }
-
-    public static void setMaxAmountOfAnimals(int maxAmountOfAnimals) {
-        Shelters.maxAmountOfAnimals = maxAmountOfAnimals;
-    }
 
     public int getCurrentAmountOfAnimals() {
         return currentAmountOfAnimals;
