@@ -17,7 +17,7 @@ public class BankAccount {
         return balance;
     }
 
-    public double deposit (double amount){ // donation or government subsidy
+    public double deposit (double amount){ // donation or government subsidies
         balance += amount;
         return balance;
     }
