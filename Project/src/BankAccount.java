@@ -40,5 +40,6 @@ public class BankAccount {
             System.out.println((i + 1) + ". " + expense.getLocalDateTime() + " . Expense on " + expense.getPurpose() + ": " + expense.getAmount() + " EUR.");
         }
     }
+    // COMMIT 21.40
 }
 
