@@ -1,6 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Random;
 import java.util.Scanner;
 
 public class AnimalsRegistration {
@@ -12,30 +13,44 @@ public class AnimalsRegistration {
             System.out.println("Dzīvnieku reģistrs");
             System.out.println("Dzīvnieka vārds: ");
             String name = scan.nextLine();
-            System.out.println("Dzīvnieka tips(suns, ķaķis, cits): ");
-            String type = scan.nextLine();
+            String[] type = new String[] {"Suns", "Kaķis", "Cits"};
+            System.out.println("Dzīvnieka tips:");
+            for (byte i = 0; i < type.length; i ++) {
+                System.out.println(i + 1 + " - " + type[i]);
+            }
+            System.out.print("Ievadiet atbilstošo numuru: ");
+            byte t = scan.nextByte();
             System.out.println("Dzīvnieka vecums: ");
             int age = scan.nextInt();
-            System.out.println("Dzīvnieka lielums (mazs, vidējs, liels): ");
-            String size = scan.next();
+            String[] size = new String[] {"Liels", "Vidējs", "Mazs"};
+            System.out.println("Dzīvnieka lielums:");
+            for (byte i = 0; i < size.length; i ++) {
+                System.out.println(i + 1 + " - " + size[i]);
+            }
+            System.out.print("Ievadiet atbilstošo numuru: ");
+            byte s = scan.nextByte();
             System.out.println("Pavadītais laiks patversmē (nedēļas): ");
             int timeInShelter = scan.nextInt();
-            System.out.println("Patversme(ulubele, dzīvnieku draugs, labās mājas): ");
-            String assignedShelter = scan.next();
+            String[] assignedShelter = new String[] {"Ulubele", "Dzīvnieku Draugs", "Labās Mājas"};
+            System.out.println("Patversme:");
+            for (byte i = 0; i < assignedShelter.length; i ++) {
+                System.out.println(i + 1 + " - " + assignedShelter[i]);
+            }
+            System.out.print("Ievadiet atbilstošo numuru: ");
+            byte a = scan.nextByte();
             System.out.println("Īpašas vajadzības: ");
             boolean needsSpecialTreatment = scan.nextBoolean();
             System.out.println("Adoptēts: ");
             boolean isAdopted = scan.nextBoolean();
             System.out.println("Piemērots brīvprātīgajiem: ");
             boolean isWalkable = scan.nextBoolean();
-
-            int id = 1;
-
+            Random id_animal = new Random();
+            int id = id_animal.nextInt();
 
 
             FileWriter myFile = new FileWriter("Dzīvnieku_reģistrs.txt", true);
             PrintWriter writeIntoFile = new PrintWriter(myFile);
-            writeIntoFile.printf("%s %s %s %s %s %s %s %s %s \n", name, type, age, size, timeInShelter, assignedShelter, needsSpecialTreatment, isAdopted, isWalkable );
+            writeIntoFile.printf("%s %s %s %s %s %s %s %s %s %sD \n", name, type[t-1], age, size[s-1], timeInShelter, assignedShelter[a-1], needsSpecialTreatment, isAdopted, isWalkable,id);
             myFile.close();
             System.out.println("Dzīvnieks ir reģistrēts!");
             scan.close();
