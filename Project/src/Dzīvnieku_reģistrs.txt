@@ -2,3 +2,4 @@
 
 Pupsiks suns 7 mazs 55 ulubele false false true
 Pupsiks suns 7 mazs 55 ulubele false false true 
+Muris kaķis 3 mazs 66 ulubele false true false 

@@ -6,9 +6,6 @@ import java.util.Scanner;
 public class AnimalsRegistration {
 
 
-    public static class AnimalRegistration {
-        public AnimalRegistration() {
-        }
 
         public static void main(String[] args) throws IOException {
             Scanner scan = new Scanner(System.in);
@@ -31,14 +28,17 @@ public class AnimalsRegistration {
             boolean isAdopted = scan.nextBoolean();
             System.out.println("Piemērots brīvprātīgajiem: ");
             boolean isWalkable = scan.nextBoolean();
-            System.out.println("ID numurs: ");
-            int id = scan.nextInt();
+
+            int id = 1;
+
+
+
             FileWriter myFile = new FileWriter("Dzīvnieku_reģistrs.txt", true);
             PrintWriter writeIntoFile = new PrintWriter(myFile);
-            writeIntoFile.printf("%s %s %s %s %s %s %s %s %s \n", name, type, age, size, timeInShelter, assignedShelter, needsSpecialTreatment, isAdopted, isWalkable, id);
+            writeIntoFile.printf("%s %s %s %s %s %s %s %s %s \n", name, type, age, size, timeInShelter, assignedShelter, needsSpecialTreatment, isAdopted, isWalkable );
             myFile.close();
             System.out.println("Dzīvnieks ir reģistrēts!");
             scan.close();
         }
     }
-}
+
