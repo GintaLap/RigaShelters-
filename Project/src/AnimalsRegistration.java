@@ -43,26 +43,15 @@ public class AnimalsRegistration {
             Random id_animal = new Random();
             int id = id_animal.nextInt();
 
+
             String DzīvniekuReģistrs = "Dzīvnieku_reģistrs";
             try (FileWriter fileWriter = new FileWriter("Dzīvnieku_reģistrs.txt", true)) {
                 PrintWriter writeIntoFile = new PrintWriter(fileWriter);
-                writeIntoFile.printf("%s %s %s %s %s %s %s %s %s %sD \n", name, type[t - 1], age, size[s - 1], timeInShelter, assignedShelter[a - 1], needsSpecialTreatment, isAdopted, isWalkable, id);
+                writeIntoFile.printf("%s %s %s %s %s %s %s %s %s %s \n", name, type[t - 1], age, size[s - 1], timeInShelter, assignedShelter[a - 1], needsSpecialTreatment, isAdopted, isWalkable, id);
                 fileWriter.close();
                 System.out.println("Dzīvnieks ir reģistrēts!");
                 scan.close();
             }catch (IOException e){
-                System.out.println("Savienojums neizdevās!");
-            }
-
-            try (FileReader fileReader = new FileReader(DzīvniekuReģistrs) {
-                int ch = fileReader.read();
-            while (ch != -1) {
-                    System.out.print((char)ch);
-                    fileReader.close();
-                }
-            } catch (FileNotFoundException e) {
-                System.out.println("Fails netika atrasts!");
-            } catch (IOException e) {
                 System.out.println("Savienojums neizdevās!");
             }
         }
