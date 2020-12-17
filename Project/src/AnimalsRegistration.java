@@ -43,6 +43,7 @@ public class AnimalsRegistration {
             Random id_animal = new Random();
             int id = id_animal.nextInt();
 
+
             String DzīvniekuReģistrs = "Dzīvnieku_reģistrs";
             try (FileWriter fileWriter = new FileWriter("Dzīvnieku_reģistrs.txt", true)) {
                 PrintWriter writeIntoFile = new PrintWriter(fileWriter);
