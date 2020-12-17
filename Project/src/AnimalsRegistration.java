@@ -53,18 +53,6 @@ public class AnimalsRegistration {
             }catch (IOException e){
                 System.out.println("Savienojums neizdevās!");
             }
-
-            try (FileReader fileReader = new FileReader(DzīvniekuReģistrs) {
-                int ch = fileReader.read();
-            while (ch != -1) {
-                    System.out.print((char)ch);
-                    fileReader.close();
-                }
-            } catch (FileNotFoundException e) {
-                System.out.println("Fails netika atrasts!");
-            } catch (IOException e) {
-                System.out.println("Savienojums neizdevās!");
-            }
         }
     }
 
