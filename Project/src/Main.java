@@ -11,16 +11,23 @@ public class Main {
         BankAccount labasMajasAccount = new BankAccount("LV95HABA0551003865018", 1000.0);
         BankAccount dzivniekuDraugsAccount = new BankAccount("LV71HABA0551039535066", 500.0);
 
+
         ulubeleAccount.deposit(10.5);
         System.out.println(ulubeleAccount.getBalance());
         ulubeleAccount.deposit(200);
         System.out.println(ulubeleAccount.getBalance());
         labasMajasAccount.deposit(500);
 
-        ulubeleAccount.newExpense("Food", 200);
-        ulubeleAccount.newExpense("Electricity", 10.5);
+        ulubeleAccount.addExpense("Food", 200);
+        ulubeleAccount.addExpense("Electricity", 10.5);
 
         Animal.readFile();
+
+        System.out.println(ulubeleAccount.getBalance());
+        Employee employee1 = new Employee("Janis", "Roze", "200000000", "LV97HABA0505728564893","manager");
+        employee1.paySalary(ulubeleAccount);
+        System.out.println(ulubeleAccount.getBalance());
+
 
 
 

@@ -24,7 +24,7 @@ public class BankAccount {
         return balance;
     }
 
-    public void newExpense(String purpose, double amount) {     // creating an instance of Expense object
+    public void addExpense(String purpose, double amount) {     // creating an instance of Expense object
         // check if purpose is food/etc, if not then not create expense?
         Expense expense = new Expense(purpose, amount);
         expenseList.add(expense); // adding particular expense to expense list
