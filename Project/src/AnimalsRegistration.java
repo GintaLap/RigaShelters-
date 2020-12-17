@@ -46,7 +46,7 @@ public class AnimalsRegistration {
             String DzīvniekuReģistrs = "Dzīvnieku_reģistrs";
             try (FileWriter fileWriter = new FileWriter("Dzīvnieku_reģistrs.txt", true)) {
                 PrintWriter writeIntoFile = new PrintWriter(fileWriter);
-                writeIntoFile.printf("%s %s %s %s %s %s %s %s %s %sD \n", name, type[t - 1], age, size[s - 1], timeInShelter, assignedShelter[a - 1], needsSpecialTreatment, isAdopted, isWalkable, id);
+                writeIntoFile.printf("%s %s %s %s %s %s %s %s %s %s \n", name, type[t - 1], age, size[s - 1], timeInShelter, assignedShelter[a - 1], needsSpecialTreatment, isAdopted, isWalkable, id);
                 fileWriter.close();
                 System.out.println("Dzīvnieks ir reģistrēts!");
                 scan.close();
