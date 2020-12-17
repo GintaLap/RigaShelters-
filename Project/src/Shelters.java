@@ -6,8 +6,18 @@ public class Shelters {
     private int maxAmountOfAnimals;
     private int currentAmountOfAnimals;
     private String bankDetails;
+    private int shelterId;
 
-    public Shelters(String shelterName, String address, int number, String email, int maxAmountOfAnimals, int currentAmountOfAnimals, String bankDetails) {
+
+    public int getShelterId() {
+        return shelterId;
+    }
+
+    public void setShelterId(int shelterId) {
+        this.shelterId = shelterId;
+    }
+
+    public Shelters(String shelterName, String address, int number, String email, int maxAmountOfAnimals, int currentAmountOfAnimals, String bankDetails, int shelterId) {
         this.shelterName = shelterName;
         this.address = address;
         this.number = number;
@@ -15,6 +25,7 @@ public class Shelters {
         this.maxAmountOfAnimals = maxAmountOfAnimals;
         this.currentAmountOfAnimals = currentAmountOfAnimals;
         this.bankDetails = bankDetails;
+        this.shelterId = shelterId;
     }
 
     public int getMaxAmountOfAnimals() {
