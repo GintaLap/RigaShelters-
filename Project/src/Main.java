@@ -15,9 +15,12 @@ public class Main {
         System.out.println(ulubeleAccount.getBalance());
         ulubeleAccount.deposit(200);
         System.out.println(ulubeleAccount.getBalance());
+        labasMajasAccount.deposit(500);
 
         ulubeleAccount.newExpense("Food", 200);
         ulubeleAccount.newExpense("Electricity", 10.5);
+
+        Animal.readFile();
 
 
 
