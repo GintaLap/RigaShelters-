@@ -84,4 +84,10 @@ public class Shelters {
     public void setBankDetails(String bankDetails) {
         this.bankDetails = bankDetails;
     }
+
+    public void getShelterDetails(){
+        System.out.println("Shelter \"" + shelterName + "\". Address: " + address + ". Phone number: " + number + ". Email: " +email +
+                ". Bank account: " + bankDetails + ". Maximum amount of animals: " + maxAmountOfAnimals + ". Current amount of animals: " +
+                currentAmountOfAnimals + ". ");
+    }
 }

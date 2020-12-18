@@ -24,7 +24,7 @@ public class Expense {
     }
 
     public String getLocalDateTime() { // getting local time, when method was called
-        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:m", Locale.ENGLISH);
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm", Locale.ENGLISH);
         String formatted = dateFormat.format(localDateTime);
         return formatted;
     }
