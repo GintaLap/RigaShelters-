@@ -106,24 +106,4 @@ public class Animal {
         this.isAdopted = isAdopted;
         this.isWalkable = isWalkable;
     }
-    public static void readFile(){
-        try {
-            File myObj = new File("Dzīvnieku_reģistrs.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                String[] fields = data.split(" ");
-                // if fields [0] == .......
-                System.out.println(fields[0]); // read elements
-                System.out.println(fields[1]);
-
-            }
-            myReader.close();
-        } catch (
-                FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-    }
-
 }

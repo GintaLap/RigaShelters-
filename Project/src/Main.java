@@ -12,15 +12,15 @@ public class Main {
         BankAccount labasMajasAccount = new BankAccount("LV95HABA0551003865018", 9000.0);
         BankAccount dzivniekuDraugsAccount = new BankAccount("LV71HABA0551039535066", 5000.0);
 
-        System.out.println(ulubeleAccount.getBalance());
+        System.out.println("Initial balance test: " + ulubeleAccount.getBalance());
         Employee employee1 = new Employee("Janis", "Roze", "200000000", "LV97HABA0505728564893","manager");
         employee1.paySalary(ulubeleAccount);
-        System.out.println(ulubeleAccount.getBalance());
+        System.out.println("Balance test: " + ulubeleAccount.getBalance());
 
         Volunteer volunteer1 = new Volunteer("Arturs","Berzins","20202020");
-        System.out.println(volunteer1.getId());
+        System.out.println("Volunteers1 ID: " + volunteer1.getId());
         Volunteer volunteer2 = new Volunteer ("Antonio", "Banderas", "28833445");
-        System.out.println(volunteer2.getId());
+        System.out.println("Volunteers2 ID: " + volunteer2.getId());
 
         dzīvniekuDraugs.getShelterDetails();
 
@@ -33,7 +33,16 @@ public class Main {
         ulubeleAccount.addExpense("Food", 200);
         ulubeleAccount.addExpense("Electricity", 10.5);
 
-        Animal.readFile();
+
+        FoodExpense foodExpenseOneMonth = new FoodExpense();
+        foodExpenseOneMonth.read();
+        System.out.println("Monthly expenses on dogs' food: " + foodExpenseOneMonth.foodExpenseDogs() +  " EUR. ");
+        System.out.println("Monthly expenses on cats' food: " + foodExpenseOneMonth.foodExpenseCats() + " EUR. ");
+        System.out.println("Total monthly expenses on animals' food: " + foodExpenseOneMonth.foodExpenseTotal() + " EUR. ");
+
+
+        System.out.println(AnimalsCount.smallCatCount);
+
 
 
 

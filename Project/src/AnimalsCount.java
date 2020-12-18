@@ -3,29 +3,25 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class AnimalsCount {
-    private int catCount = 0;
-    private int dogCount = 0;
 
-    private int smallCatCount = 0;
-    private int smallCatSpecialCount = 0;
-    private int mediumCatCount = 0;
-    private int mediumCatSpecialCount = 0;
-    private int bigCatCount = 0;
-    private int bigCatSpecialCount = 0;
+    public static int catCount = 0;
+    public static int dogCount = 0;
 
-    private int smallDogCount = 0;
-    private int smallDogSpecialCount = 0;
-    private int mediumDogCount = 0;
-    private int mediumDogSpecialCount = 0;
-    private int bigDogCount = 0;
-    private int bigDogSpecialCount = 0;
+    public static int smallCatCount = 0;
+    public static int smallCatSpecialCount = 0;
+    public static int mediumCatCount = 0;
+    public static int mediumCatSpecialCount = 0;
+    public static int bigCatCount = 0;
+    public static int bigCatSpecialCount = 0;
 
-    public static void main(String[] args) {
-        AnimalsCount a = new AnimalsCount();
-        a.readFile();
-    }
+    public static int smallDogCount = 0;
+    public static int smallDogSpecialCount = 0;
+    public static int mediumDogCount = 0;
+    public static int mediumDogSpecialCount = 0;
+    public static int bigDogCount = 0;
+    public static int bigDogSpecialCount = 0;
 
-    public void readFile() {
+    public static void countAnimals() {
         try {
             File myObj = new File("Dzīvnieku_reģistrs.txt");
             Scanner myReader = new Scanner(myObj);
@@ -75,7 +71,6 @@ public class AnimalsCount {
                     if (fields[6].equals("true"))
                         bigDogSpecialCount++;
                 }
-
             }
             /*System.out.println(catCount);
             System.out.println(dogCount);
@@ -93,7 +88,6 @@ public class AnimalsCount {
             System.out.println(mediumDogSpecialCount);
             System.out.println(bigDogCount);
             System.out.println(bigDogSpecialCount);*/
-
 
             myReader.close();
         } catch (
