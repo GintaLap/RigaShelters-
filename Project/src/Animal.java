@@ -118,15 +118,23 @@ public class Animal {
             System.out.println("Dzīvnieku reģistrs");
             System.out.println("Dzīvnieka vārds: ");
             String name = scan.nextLine();
-            String[] type = new String[] {"Suns", "Kaķis", "Cits"};
+            String[] type = new String[] {"Suns", "Kaķis"};
             System.out.println("Dzīvnieka tips:");
             for (byte i = 0; i < type.length; i ++) {
                 System.out.println(i + 1 + " - " + type[i]);
             }
-            System.out.print("Ievadiet atbilstošo numuru: ");
+            System.out.print("Ievadiet atbilstošo numuru (1 vai 2): ");
             byte t = scan.nextByte();
-            System.out.println("Dzīvnieka vecums: ");
+            while (t != 2 && t != 1){
+            System.out.print("Neatbilstošs numurs. Ievadiet atbilstošo numuru (1 vai 2): ");
+            t = scan.nextByte();
+                    }
+            System.out.println("Dzīvnieka vecums (pilnos gados): ");
             int age = scan.nextInt();
+            while (age<0 || age>30){
+                System.out.println("Neatbilstošs vecums. Ievadiet Dzīvnieka vecumu (pilnos gados)");
+                age = scan.nextInt();
+            }
             String[] size = new String[] {"Liels", "Vidējs", "Mazs"};
             System.out.println("Dzīvnieka lielums:");
             for (byte i = 0; i < size.length; i ++) {
@@ -134,23 +142,35 @@ public class Animal {
             }
             System.out.print("Ievadiet atbilstošo numuru: ");
             byte s = scan.nextByte();
-            System.out.println("Pavadītais laiks patversmē (nedēļas): ");
+        while (s<=0 || s>3){
+            System.out.print("Neatbilstošs numurs. Ievadiet atbilstošo numuru (1-3): ");
+            s = scan.nextByte();
+        }
+            System.out.println("Pavadītais laiks patversmē (pilnas nedēļas): ");
             int timeInShelter = scan.nextInt();
-            String[] assignedShelter = new String[] {"Ulubele", "Dzīvnieku Draugs", "Labās Mājas"};
+        while (age<0){
+            System.out.println("Neatbilstošs laiks. Pavadītais laiks patversmē (pilnas nedēļas)");
+            age = scan.nextInt();
+        }
+            String[] assignedShelter = new String[] {"Ulubele", "Dzīvnieku_Draugs", "Labās_Mājas"};
             System.out.println("Patversme:");
             for (byte i = 0; i < assignedShelter.length; i ++) {
                 System.out.println(i + 1 + " - " + assignedShelter[i]);
             }
             System.out.print("Ievadiet atbilstošo numuru: ");
             byte a = scan.nextByte();
-            System.out.println("Īpašas vajadzības: ");
+        while (a<=0 || a>3){
+            System.out.print("Neatbilstošs numurs. Ievadiet atbilstošo numuru (1-3): ");
+            a = scan.nextByte();
+        }
+            System.out.println("Īpašas vajadzības(True/False): ");
             boolean needsSpecialTreatment = scan.nextBoolean();
-            System.out.println("Adoptēts: ");
+            System.out.println("Adoptēts (True/False): ");
             boolean isAdopted = scan.nextBoolean();
-            System.out.println("Piemērots brīvprātīgajiem: ");
+            System.out.println("Piemērots brīvprātīgajiem(True/False): ");
             boolean isWalkable = scan.nextBoolean();
-            Random id_animal = new Random(10000);
-            int id = id_animal.nextInt();
+            Random id_animal = new Random();
+            int id = id_animal.nextInt(10000);
 
 
             String DzīvniekuReģistrs = "Dzīvnieku_reģistrs";
@@ -164,5 +184,6 @@ public class Animal {
                 System.out.println("Savienojums neizdevās!");
             }
         }
+
     }
 

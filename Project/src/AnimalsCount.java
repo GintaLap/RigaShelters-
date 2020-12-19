@@ -55,6 +55,25 @@ public class AnimalsCount {
     public static int bigDogSpecialCountDD = 0;
     public static int bigDogSpecialCountLM = 0;
 
+    public static int currentAnimalCountU = 0;
+    public static int currentAnimalCountDD = 0;
+    public static int currentAnimalCountLM = 0;
+
+    public static int dogsForVolunteersU;
+    public static int dogsForVolunteersDD;
+    public static int dogsForVolunteersLM;
+    public static int catsForVolunteersU;
+    public static int catsForVolunteersDD;
+    public static int catsForVolunteersLM;
+
+    public static int dogsAdopted;
+    public static int catsAdopted;
+    public static int dogsInShelters;
+    public static int catsInShelters;
+    public static int totalAnimalsInShelters;
+    public static int totalAdoptedAnimals;
+
+
     public static void countAnimals() {
         try {
             File myObj = new File("Dzīvnieku_reģistrs.txt");
@@ -63,7 +82,7 @@ public class AnimalsCount {
                 String data = myReader.nextLine();
                 String[] fields = data.split(" ");
                 // if fields [0] == .......for (int i = 0; i <data.length() ; i++) {
-                if (fields[1].equalsIgnoreCase("kaķis")&& fields[5].equals("Ulubele")) {
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[5].equals("Ulubele") && fields[7].equals("false")) {
                     catCountU++;
                     if (fields[3].equalsIgnoreCase("mazs")) {
                         smallCatCountU++;
@@ -71,7 +90,7 @@ public class AnimalsCount {
                             smallCatSpecialCountU++;
                     }
                 }
-                if (fields[1].equalsIgnoreCase("kaķis")&& fields[5].equals("Dzīvnieku Draugs")) {
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[5].equals("Dzīvnieku_Draugs") && fields[7].equals("false")) {
                     catCountDD++;
                     if (fields[3].equalsIgnoreCase("mazs")) {
                         smallCatCountDD++;
@@ -79,7 +98,7 @@ public class AnimalsCount {
                             smallCatSpecialCountDD++;
                     }
                 }
-                if (fields[1].equalsIgnoreCase("kaķis")&& fields[5].equals("Labās Mājas")) {
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[5].equals("Labās_Mājas") && fields[7].equals("false")) {
                     catCountLM++;
                     if (fields[3].equalsIgnoreCase("mazs")) {
                         smallCatCountLM++;
@@ -88,40 +107,40 @@ public class AnimalsCount {
                     }
                 }
 
-                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("vidējs") && fields[5].equals("Ulubele")) {
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("vidējs") && fields[5].equals("Ulubele")&& fields[7].equals("false")) {
                     mediumCatCountU++;
                     if (fields[6].equals("true"))
                         mediumCatSpecialCountU++;
                 }
-                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("vidējs") && fields[5].equals("Dzīvnieku Draugs")) {
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("vidējs") && fields[5].equals("Dzīvnieku_Draugs")&& fields[7].equals("false")) {
                     mediumCatCountDD++;
                     if (fields[6].equals("true"))
                         mediumCatSpecialCountDD++;
                 }
-                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("vidējs") && fields[5].equals("Labās Mājas")) {
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("vidējs") && fields[5].equals("Labās_Mājas")&& fields[7].equals("false")) {
                     mediumCatCountLM++;
                     if (fields[6].equals("true"))
                         mediumCatSpecialCountLM++;
                 }
 
-                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("liels")&&fields[5].equals("Ulubele")) {
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("liels") && fields[5].equals("Ulubele")&& fields[7].equals("false")) {
                     bigCatCountU++;
                     if (fields[6].equals("true"))
                         bigCatSpecialCountU++;
                 }
-                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("liels")&&fields[5].equals("Dzīvnieku Draugs")) {
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("liels") && fields[5].equals("Dzīvnieku_Draugs")&& fields[7].equals("false")) {
                     bigCatCountDD++;
                     if (fields[6].equals("true"))
                         bigCatSpecialCountDD++;
                 }
-                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("liels")&&fields[5].equals("Labās Mājas")) {
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[3].equalsIgnoreCase("liels") && fields[5].equals("Labās_Mājas")&& fields[7].equals("false")) {
                     bigCatCountLM++;
                     if (fields[6].equals("true"))
                         bigCatSpecialCountLM++;
                 }
 
 
-                if (fields[1].equalsIgnoreCase("suns")&& fields[5].equals("Ulubele")) {
+                if (fields[1].equalsIgnoreCase("suns") && fields[5].equals("Ulubele")&& fields[7].equals("false")) {
                     dogCountU++;
                     if (fields[3].equalsIgnoreCase("mazs")) {
                         smallDogCountU++;
@@ -129,7 +148,7 @@ public class AnimalsCount {
                             smallDogSpecialCountU++;
                     }
                 }
-                if (fields[1].equalsIgnoreCase("suns")&& fields[5].equals("Dzīvnieku Draugs")) {
+                if (fields[1].equalsIgnoreCase("suns") && fields[5].equals("Dzīvnieku_Draugs")&& fields[7].equals("false")) {
                     dogCountDD++;
                     if (fields[3].equalsIgnoreCase("mazs")) {
                         smallDogCountDD++;
@@ -137,7 +156,7 @@ public class AnimalsCount {
                             smallDogSpecialCountDD++;
                     }
                 }
-                if (fields[1].equalsIgnoreCase("suns")&& fields[5].equals("Labās Mājas")) {
+                if (fields[1].equalsIgnoreCase("suns") && fields[5].equals("Labās_Mājas")&& fields[7].equals("false")) {
                     dogCountLM++;
                     if (fields[3].equalsIgnoreCase("mazs")) {
                         smallDogCountLM++;
@@ -146,54 +165,73 @@ public class AnimalsCount {
                     }
                 }
 
-                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("vidējs")&& fields[5].equals("Ulubele")) {
+                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("vidējs") && fields[5].equals("Ulubele")&& fields[7].equals("false")) {
                     mediumDogCountU++;
                     if (fields[6].equals("true"))
                         mediumDogSpecialCountU++;
                 }
-                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("vidējs")&& fields[5].equals("Dzīvnieku Draugs")) {
+                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("vidējs") && fields[5].equals("Dzīvnieku_Draugs")&& fields[7].equals("false")) {
                     mediumDogCountDD++;
                     if (fields[6].equals("true"))
                         mediumDogSpecialCountDD++;
                 }
-                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("vidējs")&& fields[5].equals("Labās Mājas")) {
+                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("vidējs") && fields[5].equals("Labās_Mājas")&& fields[7].equals("false")) {
                     mediumDogCountLM++;
                     if (fields[6].equals("true"))
                         mediumDogSpecialCountLM++;
                 }
 
-                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("liels")&& fields[5].equals("Ulubele")) {
+                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("liels") && fields[5].equals("Ulubele")&& fields[7].equals("false")) {
                     bigDogCountU++;
                     if (fields[6].equals("true"))
                         bigDogSpecialCountU++;
                 }
-                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("liels")&& fields[5].equals("Dzīvnieku Draugs")) {
+                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("liels") && fields[5].equals("Dzīvnieku_Draugs")&& fields[7].equals("false")) {
                     bigDogCountDD++;
                     if (fields[6].equals("true"))
                         bigDogSpecialCountDD++;
                 }
-                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("liels")&& fields[5].equals("Labās Mājas")) {
+                if (fields[1].equalsIgnoreCase("suns") && fields[3].equalsIgnoreCase("liels") && fields[5].equals("Labās_Mājas")&& fields[7].equals("false")) {
                     bigDogCountLM++;
                     if (fields[6].equals("true"))
                         bigDogSpecialCountLM++;
                 }
+                if (fields[1].equalsIgnoreCase("suns") && fields[8].equalsIgnoreCase("true") && fields[5].equals("Ulubele")&& fields[7].equals("false")) {
+                    dogsForVolunteersU++;
+                }
+                if (fields[1].equalsIgnoreCase("suns") && fields[8].equalsIgnoreCase("true") && fields[5].equals("Dzīvnieku_Draugs")&& fields[7].equals("false")) {
+                    dogsForVolunteersDD++;
+                }
+                if (fields[1].equalsIgnoreCase("suns") && fields[8].equalsIgnoreCase("true") && fields[5].equals("Labās_Mājas")&& fields[7].equals("false")) {
+                    dogsForVolunteersLM++;
+                }
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[8].equalsIgnoreCase("true") && fields[5].equals("Ulubele")&& fields[7].equals("false")) {
+                    catsForVolunteersU++;
+                }
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[8].equalsIgnoreCase("true") && fields[5].equals("Dzīvnieku_Draugs")&& fields[7].equals("false")) {
+                    catsForVolunteersDD++;
+                }
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[8].equalsIgnoreCase("true") && fields[5].equals("Labās_Mājas")&& fields[7].equals("false")) {
+                    catsForVolunteersLM++;
+                }
+                if (fields[1].equalsIgnoreCase("kaķis") && fields[7].equalsIgnoreCase("true")) {
+                    catsAdopted++;
+                }
+                if (fields[1].equalsIgnoreCase("Suns") && fields[7].equalsIgnoreCase("true")) {
+                    dogsAdopted++;
+                }
+                if (fields[1].equalsIgnoreCase("kaķis")) {
+                    catsInShelters++;
+                }
+                if (fields[1].equalsIgnoreCase("Suns")) {
+                    dogsInShelters++;
+                }
             }
-            /*System.out.println(catCount);
-            System.out.println(dogCount);
-            System.out.println();
-            System.out.println(smallCatCount);
-            System.out.println(smallCatSpecialCount);
-            System.out.println(mediumCatCount);
-            System.out.println(mediumCatSpecialCount);
-            System.out.println(bigCatCount);
-            System.out.println(bigCatSpecialCount);
-            System.out.println();
-            System.out.println(smallDogCount);
-            System.out.println(smallDogSpecialCount);
-            System.out.println(mediumDogCount);
-            System.out.println(mediumDogSpecialCount);
-            System.out.println(bigDogCount);
-            System.out.println(bigDogSpecialCount);*/
+            currentAnimalCountU = dogCountU + catCountU;
+            currentAnimalCountDD = dogCountDD + catCountDD;
+            currentAnimalCountLM = dogCountLM + catCountLM;
+            totalAdoptedAnimals = dogsAdopted+catsAdopted;
+            totalAnimalsInShelters = dogsInShelters + catsInShelters;
 
             myReader.close();
         } catch (
@@ -202,4 +240,49 @@ public class AnimalsCount {
             e.printStackTrace();
         }
     }
+
+    public int currentAnimalCountUlubele() {
+        return currentAnimalCountU;
+    }
+
+    public int currentCountDzivniekuDraugs() {
+        return currentAnimalCountDD;
+    }
+
+    public int currentCountLabasMajas() {
+        return currentAnimalCountLM;
+    }
+
+    public int dogsForVolunteersUlubele() {
+        return dogsForVolunteersU;
+    }
+
+    public int dogsForVolunteersDzivniekuDraugs() {
+        return dogsForVolunteersDD;
+    }
+
+    public int dogsForVolunteersLabasMajas() {
+        return dogsForVolunteersLM;
+    }
+
+    public int catsForVolunteersUlubele() {
+        return catsForVolunteersU;
+    }
+
+    public int catsForVolunteersDzivniekuDraugs() {
+        return catsForVolunteersDD;
+    }
+
+    public int catsForVolunteersLabasMajas() {
+        return catsForVolunteersLM;
+    }
+
+    public int AdoptedAnimals() {
+        return totalAdoptedAnimals;
+    }
+
+    public int AnimalsInAllShelters() {
+        return totalAnimalsInShelters;
+    }
+
 }

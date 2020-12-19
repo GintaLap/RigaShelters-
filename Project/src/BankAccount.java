@@ -6,7 +6,7 @@ public class BankAccount {
 
     private String accountNumber;
 
-    private double balance;
+    double balance;
     private ArrayList<Expense> expenseList = new ArrayList<>();
 
     //Array list of Expense (objects of expense class)
@@ -30,7 +30,9 @@ public class BankAccount {
         Expense expense = new Expense(purpose, amount);
         expenseList.add(expense); // adding particular expense to expense list
         balance = balance - amount; // updating balance
-
+        if (balance < 10000){
+            donationsNeeded();
+        }
         System.out.println(expense.getLocalDateTime() + ". Expense on " + purpose + ": " + amount + " EUR. Remaining balance: " + balance + " EUR. ");
     }
 
@@ -40,6 +42,9 @@ public class BankAccount {
             Expense expense = expenseList.get(i);
             System.out.println((i + 1) + ". " + expense.getLocalDateTime() + " . Expense on " + expense.getPurpose() + ": " + expense.getAmount() + " EUR.");
         }
+    }
+    public static void donationsNeeded(){
+        System.out.println("Shelter needs donations");
     }
     // COMMIT 21.40
 }

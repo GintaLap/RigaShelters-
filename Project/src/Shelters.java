@@ -4,7 +4,6 @@ public class Shelters {
     private int number;
     private String email;
     private int maxAmountOfAnimals;
-    private int currentAmountOfAnimals;
     private String bankDetails;
     private int shelterId;
 
@@ -17,13 +16,12 @@ public class Shelters {
         this.shelterId = shelterId;
     }
 
-    public Shelters(String shelterName, String address, int number, String email, int maxAmountOfAnimals, int currentAmountOfAnimals, String bankDetails, int shelterId) {
+    public Shelters(String shelterName, String address, int number, String email, int maxAmountOfAnimals,  String bankDetails, int shelterId) {
         this.shelterName = shelterName;
         this.address = address;
         this.number = number;
         this.email = email;
         this.maxAmountOfAnimals = maxAmountOfAnimals;
-        this.currentAmountOfAnimals = currentAmountOfAnimals;
         this.bankDetails = bankDetails;
         this.shelterId = shelterId;
     }
@@ -69,14 +67,6 @@ public class Shelters {
     }
 
 
-    public int getCurrentAmountOfAnimals() {
-        return currentAmountOfAnimals;
-    }
-
-    public void setCurrentAmountOfAnimals(int currentAmountOfAnimals) {
-        this.currentAmountOfAnimals = currentAmountOfAnimals;
-    }
-
     public String getBankDetails() {
         return bankDetails;
     }
@@ -87,7 +77,7 @@ public class Shelters {
 
     public void getShelterDetails(){
         System.out.println("Shelter \"" + shelterName + "\". Address: " + address + ". Phone number: " + number + ". Email: " +email +
-                ". Bank account: " + bankDetails + ". Maximum amount of animals: " + maxAmountOfAnimals + ". Current amount of animals: " +
-                currentAmountOfAnimals + ". ");
+                ". Bank account: " + bankDetails + ". Maximum amount of animals: " + maxAmountOfAnimals + ". ");
     }
+
 }
