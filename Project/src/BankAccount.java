@@ -5,6 +5,7 @@ import java.util.Locale;
 public class BankAccount {
 
     private String accountNumber;
+
     private double balance;
     private ArrayList<Expense> expenseList = new ArrayList<>();
 

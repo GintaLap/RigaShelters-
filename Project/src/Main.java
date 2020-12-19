@@ -5,8 +5,8 @@ public class Main {
 
         Shelters ulubele = new Shelters("Ulubele", "Ozolaine", 20203333, "ulubele@ulubele.org", 200, 87, "LV97HABA0551028353893",1 );
         Shelters dzīvniekuDraugs = new Shelters("Dzīvnieku Draugs", "Fridriha Candera iela 4", 67500491
-                , "DZD@LATNET.LV", 150, 100, "LV71HABA0551039535066", 1);
-        Shelters labāsMājas = new Shelters("Labās Mājas", "Mežapurva iela 2", 26617636, "info@patversme.lv", 110, 100, "LV95HABA0551003865018", 1);
+                , "DZD@LATNET.LV", 150, 100, "LV71HABA0551039535066", 2);
+        Shelters labāsMājas = new Shelters("Labās Mājas", "Mežapurva iela 2", 26617636, "info@patversme.lv", 110, 100, "LV95HABA0551003865018", 3);
 
         BankAccount ulubeleAccount = new BankAccount("LV97HABA0551028353893", 10000.0);
         BankAccount labasMajasAccount = new BankAccount("LV95HABA0551003865018", 9000.0);
@@ -36,12 +36,14 @@ public class Main {
 
         FoodExpense foodExpenseOneMonth = new FoodExpense();
         foodExpenseOneMonth.read();
-        System.out.println("Monthly expenses on dogs' food: " + foodExpenseOneMonth.foodExpenseDogs() +  " EUR. ");
-        System.out.println("Monthly expenses on cats' food: " + foodExpenseOneMonth.foodExpenseCats() + " EUR. ");
-        System.out.println("Total monthly expenses on animals' food: " + foodExpenseOneMonth.foodExpenseTotal() + " EUR. ");
+        System.out.println("Monthly expenses on dogs' food in Ulubele: " + foodExpenseOneMonth.foodExpenseDogsUlubele() +  " EUR. ");
+        System.out.println("Monthly expenses on cats' food in Ulubele: " + foodExpenseOneMonth.foodExpenseCatsUlubele() + " EUR. ");
+        System.out.println("Total monthly expenses on animals' food in Ulubele: " + foodExpenseOneMonth.foodExpenseTotalUlubele() + " EUR. ");
+
+        FoodExpense currentFoodExpenses = new FoodExpense();
 
 
-        System.out.println(AnimalsCount.smallCatCount);
+        System.out.println(AnimalsCount.smallCatCountU);
 
 
 

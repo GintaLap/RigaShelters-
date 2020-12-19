@@ -1,4 +1,4 @@
-Greguārs Suns 8 Liels 0 Ulubele true false true 933065139D
+Greguārs Suns 8 Liels 0 Ulubele true false true 933065139
 John Suns 5 Mazs 6 Ulubele false false true 675422337
 Runcuks Kaķis 3 Mazs 5 Ulubele false false true 675424633
 Apollons Kaķis 2 Vidējs 4 Ulubele true false true 675672233
@@ -8,3 +8,9 @@ Mars Kaķis 2 Mazs 2 Ulubele true false true 675422398
 Miks Suns 6 Liels 2 Ulubele false false true 675422385
 Muris Kaķis 2 Mazs 1 Ulubele false false true 675422352
 Laila Kaķis 2 Mazs 1 Ulubele true false true 675422390
+Džeks Cits 13 Mazs 12 Labās Mājas true false true 1815112098 
+Lēdija Suns 12 Liels 32 Dzīvnieku Draugs true false true 1117452382 
+Hugo Kaķis 4 Mazs 15 Dzīvnieku Draugs true false false -251732885 
+Gigis Suns 34 Vidējs 1 Labās Mājas true true false 1112871177 
+Kārlis Suns 23 Vidējs 14 Labās Mājas true true false 1726311875
+Susurs Suns 3 Mazs 1 Dzīvnieku Draugs true false false 324414892
