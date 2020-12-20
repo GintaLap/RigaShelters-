@@ -3,7 +3,7 @@ public class Shelters {
     private String address;
     private int number;
     private String email;
-    private int maxAmountOfAnimals;
+    public int maxAmountOfAnimals;
     private String bankDetails;
     private int shelterId;
 
