@@ -78,7 +78,7 @@ public class Volunteer extends Person {
         String VolunteerRegistration = "Volunteer_Registration";
         try (FileWriter fileWriter = new FileWriter("Volunteer_Registration.txt", true)) {
             PrintWriter writeIntoFile = new PrintWriter(fileWriter);
-            writeIntoFile.printf("%s %s %s %s %s \n", personName, personSurname, preferredType[p - 1], canFoster, id);
+            writeIntoFile.printf("%s %s %s %s %s %s \n", personName, personSurname,phoneNumber, preferredType[p - 1], canFoster, id);
             fileWriter.close();
             System.out.println("Volunteer is registered!");
             scan.close();
