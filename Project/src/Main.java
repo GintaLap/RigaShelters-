@@ -31,6 +31,7 @@ public class Main {
         }
     }
         public static void employeeEntry () {
+        printInstructionsEmployees();
             boolean quit2 = false;
             int choice2 = 0;
             while (!quit2) {
@@ -74,6 +75,7 @@ public class Main {
             }
         }
         public static void volunteerEntry () {
+        printInstructionsVolunteers();
             boolean quit = false;
             int choice = 0;
             while (!quit) {
@@ -86,7 +88,7 @@ public class Main {
                         printInstructionsVolunteers();
                         break;
                     case 1:
-                        volunteerRegistration();// need to make this still
+                        volunteerRegistration();
                         break;
                     case 2:
                         makeDonation();
@@ -128,11 +130,11 @@ public class Main {
         }
 
         public static void volunteerRegistration () {
-            Volunteer volunteer1 = new Volunteer("Arturs", "Berzins", "20202020");
-            System.out.println("Volunteers1 ID: " + volunteer1.getId());
-            Volunteer volunteer2 = new Volunteer("Antonio", "Banderas", "28833445");
-            System.out.println("Volunteers2 ID: " + volunteer2.getId());
-
+            //Volunteer volunteer1 = new Volunteer("Arturs", "Berzins", "20202020");
+           // System.out.println("Volunteers1 ID: " + volunteer1.getId());
+           // Volunteer volunteer2 = new Volunteer("Antonio", "Banderas", "28833445");
+           // System.out.println("Volunteers2 ID: " + volunteer2.getId());
+            Volunteer.volunteerRegistration();
         }
         public static void makeDonation() {
             System.out.println("Please make donation to following company details: ");
