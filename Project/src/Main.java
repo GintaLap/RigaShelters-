@@ -56,19 +56,16 @@ public class Main {
                         shelterExpenses();// need to check if all needed info is in there
                         break;
                     case 5:
-                        Animal.animalStatusChange(); // need to figure out how to delete from file
-                        break;
-                    case 6:
                         shelterBankAccount();// need to check if all needed info is in there
                         break;
-                    case 7:
-                        animalsForVolunteers();// need to make this still
+                    case 6:
+                        animalsForVolunteers();
                         break;
-                    case 8:
-                        employeeRegistration();// need to make this still
+                    case 7:
+                        employeeRegistration();
                         break;
 
-                    case 9:
+                    case 8:
                         quit2 = true;
                         break;
                 }
@@ -111,7 +108,7 @@ public class Main {
 
         }
         public static void employeeRegistration() {
-
+                Employee.employeeRegistration();
         }
 
         public static void shelterBankAccount () {
@@ -123,17 +120,14 @@ public class Main {
             ulubeleAccount.deposit(200);
             System.out.println(ulubeleAccount.getBalance());
             labasMajasAccount.deposit(500);
-            Employee employee1 = new Employee("Janis", "Roze", "200000000", "LV97HABA0505728564893", "manager");
-            employee1.paySalary(ulubeleAccount);
-            System.out.println("Balance test: " + ulubeleAccount.getBalance());
+            System.out.println(labasMajasAccount.getBalance());
+
+
 
         }
 
         public static void volunteerRegistration () {
-            //Volunteer volunteer1 = new Volunteer("Arturs", "Berzins", "20202020");
-           // System.out.println("Volunteers1 ID: " + volunteer1.getId());
-           // Volunteer volunteer2 = new Volunteer("Antonio", "Banderas", "28833445");
-           // System.out.println("Volunteers2 ID: " + volunteer2.getId());
+
             Volunteer.volunteerRegistration();
         }
         public static void makeDonation() {
@@ -161,6 +155,8 @@ public class Main {
 
         }
         public static void animalsToAdopt(){
+            animalsInShelters();
+            System.out.println("For adopting animals, please visit one of the shelters.");
 
         }
 
@@ -197,12 +193,15 @@ public class Main {
         }
 
         public static void animalsForVolunteers () {
+            AnimalsCount.countAnimals();
             System.out.println("Dogs for walking in Ulubele " + AnimalsCount.dogsForVolunteersU);
-            System.out.println("Dogs for walking in Dzīvnieku Draugs " + AnimalsCount.dogsForVolunteersDD);
-            System.out.println("Dogs for walking in Labās Mājas " + AnimalsCount.dogsForVolunteersLM);
             System.out.println("Cats for petting in Ulubele " + AnimalsCount.catsForVolunteersU);
+            System.out.println("Dogs for walking in Dzīvnieku Draugs " + AnimalsCount.dogsForVolunteersDD);
             System.out.println("Cats for petting in Dzīvnieku Draugs " + AnimalsCount.catsForVolunteersDD);
+            System.out.println("Dogs for walking in Labās Mājas " + AnimalsCount.dogsForVolunteersLM);
             System.out.println("Cats for petting in Labās Mājas " + AnimalsCount.catsForVolunteersLM);
+            System.out.println("For volunteers please apply for shelter animal visit by calling certain shelter.");
+
         }
 
 
@@ -213,11 +212,10 @@ public class Main {
         System.out.println("\t 2 - To assign animals to shelter.");
         System.out.println("\t 3 - To see animal statistics in shelters.");
         System.out.println("\t 4 - To see expenses for shelters.");
-        System.out.println("\t 5 - To remove animal from the shelter.");
-        System.out.println("\t 6 - To see shelter bank balance.");
-        System.out.println("\t 7 - To see number of available animals for volunteers.");
-        System.out.println("\t 8 - To register new employee.");
-        System.out.println("\t 9 - To quit the application.");
+        System.out.println("\t 5 - To see shelter bank balance.");
+        System.out.println("\t 6 - To see number of available animals for volunteers.");
+        System.out.println("\t 7 - To register new employee.");
+        System.out.println("\t 8 - To quit the application. And then press 3.");
     }
     private static void printInstructionsVolunteers() {
         System.out.println("\nPress ");
@@ -226,7 +224,7 @@ public class Main {
         System.out.println("\t 2 - To make a donation.");
         System.out.println("\t 3 - To show animals for care/walking.");
         System.out.println("\t 4 - To adopt an animal.");
-        System.out.println("\t 5 - To quit the application.");
+        System.out.println("\t 5 - To quit the application.And then press 3.");
     }
         private static void printInstructions () {
             System.out.println("\nPress ");

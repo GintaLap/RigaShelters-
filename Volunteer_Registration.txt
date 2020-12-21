@@ -3,3 +3,5 @@ Inese Ozola 29835700 Cat false 177
 Sindija Logina 293648203 Both true 4631 
 Edgars Bērziņš 28340916 Dog true 2806 
 Edgars Bērziņš 28947344 Dog true 5161 
+Helēna Kanaška 28883727 Cat false 5464 
+Jana Orlova 295403434 Both true 1037 
