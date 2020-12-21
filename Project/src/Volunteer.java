@@ -81,11 +81,11 @@ public class Volunteer extends Person {
             writeIntoFile.printf("%s %s %s %s %s %s \n", personName, personSurname,phoneNumber, preferredType[p - 1], canFoster, id);
             fileWriter.close();
             System.out.println("Volunteer is registered!");
-            scan.close();
         } catch (IOException e) {
             System.out.println("Connection failed!");
-        }scan.close();
+        }
 
     }
+
     // need to assign Volunteer to animal that needs walking
 }

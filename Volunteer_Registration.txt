@@ -1,2 +1,5 @@
-Agnese Kalniņa Dog true 6615 
-Kristīne Mieriņa Cat true 3360 
+Agnese Kalniņa 28396192 Both true 7617
+Inese Ozola 29835700 Cat false 177 
+Sindija Logina 293648203 Both true 4631 
+Edgars Bērziņš 28340916 Dog true 2806 
+Edgars Bērziņš 28947344 Dog true 5161 

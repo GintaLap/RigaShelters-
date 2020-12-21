@@ -94,10 +94,10 @@ public class Main {
                         makeDonation();
                         break;
                     case 3:
-                        animalsInShelters();
+                        animalsForVolunteers();
                         break;
                     case 4:
-                        animalsForVolunteers(); // need to make this still
+                        animalsToAdopt(); // need to make this still
 
                     case 5:
                         quit = true;
@@ -160,12 +160,22 @@ public class Main {
             FoodExpense currentFoodExpenses = new FoodExpense();
 
         }
+        public static void animalsToAdopt(){
+
+        }
+
         public static void shelterDetails () {
             Shelters ulubele = new Shelters("Ulubele", "Ozolaine", 20203333, "ulubele@ulubele.org", 200, "LV97HABA0551028353893", 1);
             Shelters dzīvniekuDraugs = new Shelters("Dzīvnieku Draugs", "Fridriha Candera iela 4", 67500491
                     , "DZD@LATNET.LV", 150, "LV71HABA0551039535066", 2);
             Shelters labāsMājas = new Shelters("Labās Mājas", "Mežapurva iela 2", 26617636, "info@patversme.lv", 110, "LV95HABA0551003865018", 3);
 
+            System.out.println("Shelter \"" + ulubele.getShelterName() + "\". Address: " + ulubele.getAddress() + ". Phone number: " + ulubele.getNumber() + ". Email: " + ulubele.getEmail() +
+                    ". Bank account: " + ulubele.getBankDetails() +". ");
+            System.out.println("Shelter \"" + dzīvniekuDraugs.getShelterName() + "\". Address: " + dzīvniekuDraugs.getAddress() + ". Phone number: " + dzīvniekuDraugs.getNumber() + ". Email: " + dzīvniekuDraugs.getEmail() +
+                    ". Bank account: " + dzīvniekuDraugs.getBankDetails() + ". ");
+            System.out.println("Shelter \"" + labāsMājas.getShelterName() + "\". Address: " + labāsMājas.getAddress() + ". Phone number: " + labāsMājas.getNumber() + ". Email: " + labāsMājas.getEmail() +
+                    ". Bank account: " + labāsMājas.getBankDetails() + ". ");
         }
         public static void animalTransfer(){
         if (AnimalsCount.currentAnimalCountU > 200){
@@ -177,6 +187,7 @@ public class Main {
             }
         }
         public static void animalsInShelters () {
+            AnimalsCount.countAnimals();
             System.out.println("Animals entered all shelters: " + AnimalsCount.totalAnimalsInShelters + ". Animals adopted : " + AnimalsCount.totalAdoptedAnimals);
             System.out.println("Current animal count in Ulubele: " + AnimalsCount.currentAnimalCountU);
             System.out.println("Current animal count in Dzīvnieku Draugs: " + AnimalsCount.currentAnimalCountDD);
@@ -213,7 +224,7 @@ public class Main {
         System.out.println("\t 0 - To print choice options.");
         System.out.println("\t 1 - To register for volunteering.");
         System.out.println("\t 2 - To make a donation.");
-        System.out.println("\t 3 - To show animals for adoption.");
+        System.out.println("\t 3 - To show animals for care/walking.");
         System.out.println("\t 4 - To adopt an animal.");
         System.out.println("\t 5 - To quit the application.");
     }

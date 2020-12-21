@@ -174,7 +174,6 @@ public class Animal {
             writeIntoFile.printf("%s %s %s %s %s %s %s %s %s %s \n", name, type[t - 1], age, size[s - 1], timeInShelter, assignedShelter[a - 1], needsSpecialTreatment, isAdopted, isWalkable, id);
             fileWriter.close();
             System.out.println("Animal is registered!");
-            scan.close();
         } catch (IOException e) {
             System.out.println("Connection failed!");
         }
@@ -182,34 +181,47 @@ public class Animal {
 
     public static void animalStatusChange() {
         Scanner scan = new Scanner(System.in);
+        String oldContent = "";
+
 
         String[] action = new String[]{"Adopted", "Deceased"};
         for (byte i = 0; i < action.length; i++) {
             System.out.println(i + 1 + " - " + action[i]);
         }
         int userInput = scan.nextInt();
-        System.out.println("Please choose action: ");
+
         if (userInput == 1) {
             try {
                 File myObj = new File("Dzīvnieku_reģistrs.txt");
-                Scanner myReader = new Scanner(myObj);
+                BufferedReader reader = new BufferedReader(new FileReader(myObj));
+                String line = reader.readLine();
 
-                while (myReader.hasNextLine()) {
-                    String data = myReader.nextLine();
-                    String[] fields = data.split(" ");
+                while (line != null) {
+                    String[] fields = line.split(" ");
                     System.out.println("Please provide animal ID number: ");
-                    String userInput2 = scan.next();
-                    if (fields[9].equals(userInput2)) {
-                        fields[7] = "true";
+                    int userInput2 = scan.nextInt();
+                    if (Integer.parseInt(fields[9]) == (userInput2)) {
+                        System.out.println("Animal found. Status changed to adopted.");
+
+                    }else{
+                        System.out.println("Animal not found.");
+
                     }
                 }
-                myReader.close();
+
             } catch (
                     FileNotFoundException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+
+
+        }else{
+
         }
     }
+
 }
 

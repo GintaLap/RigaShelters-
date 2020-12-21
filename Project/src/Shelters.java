@@ -75,7 +75,7 @@ public class Shelters {
         this.bankDetails = bankDetails;
     }
 
-    public void getShelterDetails(){
+    public  void getShelterDetails(){
         System.out.println("Shelter \"" + shelterName + "\". Address: " + address + ". Phone number: " + number + ". Email: " +email +
                 ". Bank account: " + bankDetails + ". Maximum amount of animals: " + maxAmountOfAnimals + ". ");
     }

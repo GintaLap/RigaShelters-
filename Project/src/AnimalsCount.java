@@ -73,7 +73,6 @@ public class AnimalsCount {
     public static int totalAnimalsInShelters;
     public static int totalAdoptedAnimals;
 
-
     public static void countAnimals() {
         try {
             File myObj = new File("Dzīvnieku_reģistrs.txt");
@@ -226,6 +225,7 @@ public class AnimalsCount {
                 if (fields[1].equalsIgnoreCase("Dog")) {
                     dogsInShelters++;
                 }
+
             }
             currentAnimalCountU = dogCountU + catCountU;
             currentAnimalCountDD = dogCountDD + catCountDD;
@@ -285,4 +285,7 @@ public class AnimalsCount {
         return totalAnimalsInShelters;
     }
 
+    public static void main(String[] args) {
+        System.out.println(currentAnimalCountU);
+    }
 }
