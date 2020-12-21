@@ -6,10 +6,10 @@ public class Main {
 
     public static void main(String[] args) {
         AnimalsCount.countAnimals();
-        printInstructions();
         boolean quit = false;
-        int choice = 0;
+        int choice;
         while (!quit) {
+            printInstructions();
             System.out.println("Please enter your choice: ");
             choice = input.nextInt();
             input.nextLine();
@@ -24,7 +24,6 @@ public class Main {
                 case 2:
                     volunteerEntry();
                     break;
-
                 case 3:
                     quit = true;
                     break;
@@ -32,10 +31,10 @@ public class Main {
         }
     }
         public static void employeeEntry () {
-        printInstructionsEmployees();
             boolean quit2 = false;
-            int choice2 = 0;
+            int choice2;
             while (!quit2) {
+                printInstructionsEmployees();
                 System.out.println("Please enter your choice: ");
                 choice2 = input.nextInt();
                 input.nextLine();
@@ -65,7 +64,6 @@ public class Main {
                     case 7:
                         employeeRegistration();
                         break;
-
                     case 8:
                         quit2 = true;
                         break;
@@ -73,10 +71,10 @@ public class Main {
             }
         }
         public static void volunteerEntry () {
-        printInstructionsVolunteers();
             boolean quit = false;
-            int choice = 0;
+            int choice;
             while (!quit) {
+                printInstructionsVolunteers();
                 System.out.println("Please enter your choice: ");
                 choice = input.nextInt();
                 input.nextLine();
@@ -96,7 +94,7 @@ public class Main {
                         break;
                     case 4:
                         animalsToAdopt(); // need to make this still
-
+                        break;
                     case 5:
                         quit = true;
                         break;
@@ -126,7 +124,6 @@ public class Main {
         }
 
         public static void volunteerRegistration () {
-
             Volunteer.volunteerRegistration();
         }
         public static void makeDonation() {
@@ -154,7 +151,7 @@ public class Main {
 
         }
         public static void animalsToAdopt(){
-            animalsInShelters(); // how to print result of method, not count again?
+            animalsInShelters();
             System.out.println("For adopting animals, please visit one of the shelters.");
 
         }
@@ -192,9 +189,7 @@ public class Main {
             System.out.println("Dogs for walking in Labās Mājas: " + AnimalsCount.dogsForVolunteersLM);
             System.out.println("Cats for petting in Labās Mājas: " + AnimalsCount.catsForVolunteersLM);
             System.out.println("Please apply for animal visit by calling certain shelter.");
-
         }
-
 
     private static void printInstructionsEmployees() {
         System.out.println("\nPress ");
@@ -206,7 +201,7 @@ public class Main {
         System.out.println("\t 5 - To see shelter bank balance.");
         System.out.println("\t 6 - To see number of available animals for volunteers.");
         System.out.println("\t 7 - To register new employee.");
-        System.out.println("\t 8 - To quit the application. And then press 3.");
+        System.out.println("\t 8 - To quit the employee mode.");
     }
     private static void printInstructionsVolunteers() {
         System.out.println("\nPress ");
@@ -215,13 +210,13 @@ public class Main {
         System.out.println("\t 2 - To make a donation.");
         System.out.println("\t 3 - To show animals for care/walking.");
         System.out.println("\t 4 - To adopt an animal.");
-        System.out.println("\t 5 - To quit the application.And then press 3.");
+        System.out.println("\t 5 - To quit the volunteer mode.");
     }
         private static void printInstructions () {
             System.out.println("\nPress ");
             System.out.println("\t 0 - To print choice options.");
-            System.out.println("\t 1 - Enter EMPLOYEE entry.");
-            System.out.println("\t 2 - Enter VOLUNTEER entry.");
+            System.out.println("\t 1 - To enter EMPLOYEE mode.");
+            System.out.println("\t 2 - To enter VOLUNTEER mode.");
             System.out.println("\t 3 - To quit the application.");
         }
     }
