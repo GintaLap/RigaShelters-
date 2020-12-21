@@ -20,24 +20,22 @@ public class BankAccount {
         return balance;
     }
 
-    public double deposit(double amount) { // donation or government subsidies
+    public double deposit(double amount) { // donations
         balance += amount;
         return balance;
     }
 
     public void addExpense(String purpose, double amount) {     // creating an instance of Expense object
-        // check if purpose is food/etc, if not then not create expense?
         Expense expense = new Expense(purpose, amount);
         expenseList.add(expense); // adding particular expense to expense list
         balance = balance - amount; // updating balance
-        if (balance < 10000){
+        if (balance < 5000){
             donationsNeeded();
         }
         System.out.println(expense.getLocalDateTime() + ". Expense on " + purpose + ": " + amount + " EUR. Remaining balance: " + balance + " EUR. ");
     }
 
     public void showExpenses() {  // printing out full list of expenses
-        System.out.println("Expenses of current selected shelter.");
         for (int i = 0; i < expenseList.size(); i++) {
             Expense expense = expenseList.get(i);
             System.out.println((i + 1) + ". " + expense.getLocalDateTime() + " . Expense on " + expense.getPurpose() + ": " + expense.getAmount() + " EUR.");

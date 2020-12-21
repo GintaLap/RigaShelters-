@@ -15,13 +15,13 @@ public class Employee extends Person{
         this.bankAccountDetails = bankAccountDetails;
         this.position = position;
         if (position.equalsIgnoreCase("manager")){
-            this.salary = 0;
+            this.salary = 1500;
         }
         else if (position.equalsIgnoreCase("worker")){
-            this.salary = 0;
+            this.salary = 1000;
         }
         else
-            this.salary = 0;
+            this.salary = 800;
 
     }
     public static void employeeRegistration() {
@@ -33,8 +33,6 @@ public class Employee extends Person{
         String personSurname = scan.nextLine();
         System.out.println("Employee's bank account details: ");
         String bankAccountDetails = scan.nextLine();
-        System.out.println("Employee's job position: ");
-        String position = scan.nextLine();
 
         String[] jobPosition = new String[]{"worker", "manager", "cleaner"};
         System.out.println("Job position:");
@@ -62,12 +60,11 @@ public class Employee extends Person{
         System.out.println("Employee's phone number: ");
         int phoneNumber = scan.nextInt();
 
-        System.out.println("Employee_Registration");
         try (FileWriter fileWriter = new FileWriter("Employee_Registration", true)) {
             PrintWriter writeIntoFile = new PrintWriter(fileWriter);
             writeIntoFile.printf("%s %s %s %s %s %s\n", personName, personSurname, phoneNumber, bankAccountDetails, employeeAssignedShelter[s - 1], jobPosition [j - 1]);
             fileWriter.close();
-            System.out.println("Employee is registered!");
+            System.out.println("Employee " + personName + " " + personSurname + " is registered!");
         } catch (IOException e) {
             System.out.println("Connection failed!");
         }
@@ -93,7 +90,6 @@ public class Employee extends Person{
             e.printStackTrace();
         }
     }
-
 
     public double paySalary(BankAccount shelterAccount){
         double balance = shelterAccount.getBalance();

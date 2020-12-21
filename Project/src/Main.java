@@ -56,18 +56,21 @@ public class Main {
                         animalsInShelters();
                         break;
                     case 4:
-                        shelterExpenses();// need to check if all needed info is in there
+                        addExpense();
                         break;
                     case 5:
-                        shelterBankAccount();// need to check if all needed info is in there
+                        shelterExpenses();// need to check if all needed info is in there
                         break;
                     case 6:
-                        animalsForVolunteers();
+                        shelterBankAccount();// need to check if all needed info is in there
                         break;
                     case 7:
-                        employeeRegistration();
+                        animalsForVolunteers();
                         break;
                     case 8:
+                        employeeRegistration();
+                        break;
+                    case 9:
                         quit2 = true;
                         break;
                 }
@@ -150,10 +153,33 @@ public class Main {
 
         }
 
+        private static void addExpense(){
+            System.out.println("Please choose shelter: ");
+            String[] shelter = new String[]{"Ulubele", "Dzīvnieku_Draugs", "Labās_Mājas"};
+            for (byte i = 0; i < shelter.length; i++) {
+                System.out.println(i + 1 + " - " + shelter[i]);
+            }
+            System.out.print("Enter number accordingly: ");
+            byte s = input.nextByte();
+            while (s <= 0 || s > 3) {
+                System.out.print("Incorrect entry. Please enter number accordingly (1-3): ");
+                s = input.nextByte();
+            }
+            System.out.println("Please specify purpose of expense");
+            String purpose = input.next();
+            System.out.println("Please specify expense amount in EUR: ");
+            double amount = input.nextDouble();
+            if (s == 1)
+                ulubeleAccount.addExpense(purpose,amount);
+            if (s == 2)
+                dzivniekuDraugsAccount.addExpense(purpose,amount);
+            if (s == 3)
+                labasMajasAccount.addExpense(purpose,amount);
+        }
         private static void shelterExpenses () {
             FoodExpense foodExpenseOneMonth = new FoodExpense();
             foodExpenseOneMonth.read();
-            System.out.println("Monthly expenses on dogs' food in Ulubele: " + foodExpenseOneMonth.foodExpenseDogsUlubele() + " EUR. ");
+            /*System.out.println("Monthly expenses on dogs' food in Ulubele: " + foodExpenseOneMonth.foodExpenseDogsUlubele() + " EUR. ");
             System.out.println("Monthly expenses on cats' food in Ulubele: " + foodExpenseOneMonth.foodExpenseCatsUlubele() + " EUR. ");
             System.out.println("Total monthly expenses on animals' food in Ulubele: " + foodExpenseOneMonth.foodExpenseTotalUlubele() + " EUR. ");
 
@@ -163,9 +189,31 @@ public class Main {
 
             System.out.println("Monthly expenses on dogs' food in Labās Mājas: " + foodExpenseOneMonth.foodExpenseDogsLabasMajas() + " EUR. ");
             System.out.println("Monthly expenses on cats' food in Labās Mājas: " + foodExpenseOneMonth.foodExpenseCatsLabasMajas() + " EUR. ");
-            System.out.println("Total monthly expenses on animals' food in Labās Mājas: " + foodExpenseOneMonth.foodExpenseTotalLabasMajas() + " EUR. ");
-
-            FoodExpense currentFoodExpenses = new FoodExpense();
+            System.out.println("Total monthly expenses on animals' food in Labās Mājas: " + foodExpenseOneMonth.foodExpenseTotalLabasMajas() + " EUR. ");*/
+            System.out.println("Please choose expenses of which shelter you would like to see: ");
+            String[] shelter = new String[]{"Ulubele", "Dzīvnieku_Draugs", "Labās_Mājas"};
+            for (byte i = 0; i < shelter.length; i++) {
+                System.out.println(i + 1 + " - " + shelter[i]);
+            }
+            System.out.print("Enter number accordingly: ");
+            byte s = input.nextByte();
+            while (s <= 0 || s > 3) {
+                System.out.print("Incorrect entry. Please enter number accordingly (1-3): ");
+                s = input.nextByte();
+            }
+            if (s == 1) {
+                System.out.println("Expenses of \" Ulubele \" shelter: ");
+                ulubeleAccount.showExpenses();
+            }
+            if (s == 2){
+                System.out.println("Expenses of \" Dzīvnieku draugs \" shelter: ");
+                dzivniekuDraugsAccount.showExpenses();
+            }
+            if (s == 3) {
+                System.out.println("Expenses of \" Labās Mājas \" shelter: ");
+                labasMajasAccount.showExpenses();
+            }
+            // FoodExpense currentFoodExpenses = new FoodExpense();
 
         }
         public static void animalsToAdopt(){
@@ -215,11 +263,12 @@ public class Main {
         System.out.println("\t 1 - To print Shelter details.");
         System.out.println("\t 2 - To assign animals to shelter.");
         System.out.println("\t 3 - To see animal statistics in shelters.");
-        System.out.println("\t 4 - To see expenses for shelters.");
-        System.out.println("\t 5 - To see shelter bank balance.");
-        System.out.println("\t 6 - To see number of available animals for volunteers.");
-        System.out.println("\t 7 - To register new employee.");
-        System.out.println("\t 8 - To quit the employee mode.");
+        System.out.println("\t 4 - To add shelter's expense.");
+        System.out.println("\t 5 - To see shelter's expenses.");
+        System.out.println("\t 6 - To see shelter bank balance.");
+        System.out.println("\t 7 - To see number of available animals for volunteers.");
+        System.out.println("\t 8 - To register new employee.");
+        System.out.println("\t 9 - To quit the employee mode.");
     }
     private static void printInstructionsVolunteers() {
         System.out.println("\nPress ");
