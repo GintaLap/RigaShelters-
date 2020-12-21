@@ -30,12 +30,12 @@ public class Employee extends Person{
         String personName = scan.nextLine();
         System.out.println("Employee's surname: ");
         String personSurname = scan.nextLine();
-        System.out.println("Employee's phone number: ");
-        int phoneNumber = scan.nextInt();
         System.out.println("Employee's bank account details: ");
         String bankAccountDetails = scan.nextLine();
         System.out.println("Employee's job position: ");
         String position = scan.nextLine();
+        System.out.println("Employee's phone number: ");
+        int phoneNumber = scan.nextInt();
 
         String employeeRegistration = "Employee_Registration";
         try (FileWriter fileWriter = new FileWriter("Employee_Registration", true)) {
