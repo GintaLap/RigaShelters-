@@ -32,3 +32,4 @@ Džoijs Dog 4 Large 12 Dzīvnieku_Draugs true false true 3374
 Čandlers Dog 5 Medium 15 Dzīvnieku_Draugs false true true 5352
 Maigonis Cat 7 Medium 17 Labās_Mājas true false false 4029
 Džeris Dog 21 Large 12 Dzīvnieku_Draugs true true true 5370 
+Peciņa Cat 2 Medium 1 Labās_Mājas true false true 9064 
