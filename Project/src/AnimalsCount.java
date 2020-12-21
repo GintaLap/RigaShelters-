@@ -59,19 +59,19 @@ public class AnimalsCount {
     public static int currentAnimalCountDD = 0;
     public static int currentAnimalCountLM = 0;
 
-    public static int dogsForVolunteersU;
-    public static int dogsForVolunteersDD;
-    public static int dogsForVolunteersLM;
-    public static int catsForVolunteersU;
-    public static int catsForVolunteersDD;
-    public static int catsForVolunteersLM;
+    public static int dogsForVolunteersU = 0;
+    public static int dogsForVolunteersDD = 0;
+    public static int dogsForVolunteersLM = 0;
+    public static int catsForVolunteersU = 0;
+    public static int catsForVolunteersDD = 0;
+    public static int catsForVolunteersLM = 0;
 
-    public static int dogsAdopted;
-    public static int catsAdopted;
-    public static int dogsInShelters;
-    public static int catsInShelters;
-    public static int totalAnimalsInShelters;
-    public static int totalAdoptedAnimals;
+    public static int dogsAdopted = 0;
+    public static int catsAdopted = 0;
+    public static int dogsInShelters = 0;
+    public static int catsInShelters = 0;
+    public static int totalAnimalsInShelters = 0;
+    public static int totalAdoptedAnimals = 0;
 
     public static void countAnimals() {
         try {
@@ -225,13 +225,12 @@ public class AnimalsCount {
                 if (fields[1].equalsIgnoreCase("Dog")) {
                     dogsInShelters++;
                 }
-
+                currentAnimalCountU = dogCountU + catCountU;
+                currentAnimalCountDD = dogCountDD + catCountDD;
+                currentAnimalCountLM = dogCountLM + catCountLM;
+                totalAdoptedAnimals = dogsAdopted+catsAdopted;
+                totalAnimalsInShelters = dogsInShelters + catsInShelters;
             }
-            currentAnimalCountU = dogCountU + catCountU;
-            currentAnimalCountDD = dogCountDD + catCountDD;
-            currentAnimalCountLM = dogCountLM + catCountLM;
-            totalAdoptedAnimals = dogsAdopted+catsAdopted;
-            totalAnimalsInShelters = dogsInShelters + catsInShelters;
 
             myReader.close();
         } catch (
@@ -285,7 +284,4 @@ public class AnimalsCount {
         return totalAnimalsInShelters;
     }
 
-    public static void main(String[] args) {
-        System.out.println(currentAnimalCountU);
-    }
 }
