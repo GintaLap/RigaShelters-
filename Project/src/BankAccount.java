@@ -6,7 +6,7 @@ public class BankAccount {
 
     private String accountNumber;
 
-    double balance;
+    private double balance;
     private ArrayList<Expense> expenseList = new ArrayList<>();
 
     //Array list of Expense (objects of expense class)

@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 public class Main {
     private static Scanner input = new Scanner(System.in);
+    private static BankAccount ulubeleAccount = new BankAccount("LV97HABA0551028353893", 10000.0);
+    private static BankAccount labasMajasAccount = new BankAccount("LV95HABA0551003865018", 9000.0);
+    private static BankAccount dzivniekuDraugsAccount = new BankAccount("LV71HABA0551039535066", 5000.0);
 
     public static void main(String[] args) {
         AnimalsCount.countAnimals();
@@ -111,12 +114,6 @@ public class Main {
         }
 
         public static void shelterBankAccount () {
-            BankAccount ulubeleAccount = new BankAccount("LV97HABA0551028353893", 10000.0);
-            BankAccount labasMajasAccount = new BankAccount("LV95HABA0551003865018", 9000.0);
-            BankAccount dzivniekuDraugsAccount = new BankAccount("LV71HABA0551039535066", 5000.0);
-            /*ulubeleAccount.deposit(10.5);
-            System.out.println( + ulubeleAccount.getBalance());
-            ulubeleAccount.deposit(200);*/
             System.out.println("\"Ulubele\" bank account balance: " + ulubeleAccount.getBalance());
            // labasMajasAccount.deposit(500);
             System.out.println("\"Dzīvnieku draugs\" bank account balance: " + dzivniekuDraugsAccount.getBalance());
@@ -127,10 +124,31 @@ public class Main {
             Volunteer.volunteerRegistration();
         }
         public static void makeDonation() {
-            System.out.println("Please make donation to following company details: ");
-            shelterDetails();
-        }
 
+            System.out.println("Please choose shelter to donate to : ");
+            String[] shelterToDonate = new String[]{"Ulubele", "Dzīvnieku_Draugs", "Labās_Mājas"};
+            for (byte i = 0; i < shelterToDonate.length; i++) {
+                System.out.println(i + 1 + " - " + shelterToDonate[i]);
+            }
+            System.out.print("Enter number accordingly: ");
+            byte d = input.nextByte();
+            while (d <= 0 || d > 3) {
+                System.out.print("Incorrect entry. Please enter number accordingly (1-3): ");
+                d = input.nextByte();
+            }
+            System.out.println("Please enter amount of donation in EUR: ");
+            int donation = input.nextInt();
+            if (d == 1)
+                ulubeleAccount.deposit(donation);
+            if (d == 2)
+                dzivniekuDraugsAccount.deposit(donation);
+            if (d == 3)
+                labasMajasAccount.deposit(donation);
+            System.out.println(ulubeleAccount.getBalance());
+            System.out.println(labasMajasAccount.getBalance());
+            System.out.println(dzivniekuDraugsAccount.getBalance());
+
+        }
 
         private static void shelterExpenses () {
             FoodExpense foodExpenseOneMonth = new FoodExpense();
