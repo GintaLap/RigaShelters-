@@ -5,11 +5,12 @@ public class Main {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
+        AnimalsCount.countAnimals();
         printInstructions();
         boolean quit = false;
         int choice = 0;
         while (!quit) {
-            System.out.println("Enter your choice: ");
+            System.out.println("Please enter your choice: ");
             choice = input.nextInt();
             input.nextLine();
 
@@ -35,7 +36,7 @@ public class Main {
             boolean quit2 = false;
             int choice2 = 0;
             while (!quit2) {
-                System.out.println("Enter your choice: ");
+                System.out.println("Please enter your choice: ");
                 choice2 = input.nextInt();
                 input.nextLine();
 
@@ -76,7 +77,7 @@ public class Main {
             boolean quit = false;
             int choice = 0;
             while (!quit) {
-                System.out.println("Enter your choice: ");
+                System.out.println("Please enter your choice: ");
                 choice = input.nextInt();
                 input.nextLine();
 
@@ -115,15 +116,13 @@ public class Main {
             BankAccount ulubeleAccount = new BankAccount("LV97HABA0551028353893", 10000.0);
             BankAccount labasMajasAccount = new BankAccount("LV95HABA0551003865018", 9000.0);
             BankAccount dzivniekuDraugsAccount = new BankAccount("LV71HABA0551039535066", 5000.0);
-            ulubeleAccount.deposit(10.5);
-            System.out.println(ulubeleAccount.getBalance());
-            ulubeleAccount.deposit(200);
-            System.out.println(ulubeleAccount.getBalance());
-            labasMajasAccount.deposit(500);
-            System.out.println(labasMajasAccount.getBalance());
-
-
-
+            /*ulubeleAccount.deposit(10.5);
+            System.out.println( + ulubeleAccount.getBalance());
+            ulubeleAccount.deposit(200);*/
+            System.out.println("\"Ulubele\" bank account balance: " + ulubeleAccount.getBalance());
+           // labasMajasAccount.deposit(500);
+            System.out.println("\"Dzīvnieku draugs\" bank account balance: " + dzivniekuDraugsAccount.getBalance());
+            System.out.println("\"Labās mājas\" bank account balance: " + labasMajasAccount.getBalance());
         }
 
         public static void volunteerRegistration () {
@@ -155,24 +154,22 @@ public class Main {
 
         }
         public static void animalsToAdopt(){
-            animalsInShelters();
+            animalsInShelters(); // how to print result of method, not count again?
             System.out.println("For adopting animals, please visit one of the shelters.");
 
         }
 
         public static void shelterDetails () {
             Shelters ulubele = new Shelters("Ulubele", "Ozolaine", 20203333, "ulubele@ulubele.org", 200, "LV97HABA0551028353893", 1);
-            Shelters dzīvniekuDraugs = new Shelters("Dzīvnieku Draugs", "Fridriha Candera iela 4", 67500491
+            Shelters dzivniekuDraugs = new Shelters("Dzīvnieku Draugs", "Fridriha Candera iela 4", 67500491
                     , "DZD@LATNET.LV", 150, "LV71HABA0551039535066", 2);
-            Shelters labāsMājas = new Shelters("Labās Mājas", "Mežapurva iela 2", 26617636, "info@patversme.lv", 110, "LV95HABA0551003865018", 3);
+            Shelters labasMajas = new Shelters("Labās Mājas", "Mežapurva iela 2", 26617636, "info@patversme.lv", 110, "LV95HABA0551003865018", 3);
 
-            System.out.println("Shelter \"" + ulubele.getShelterName() + "\". Address: " + ulubele.getAddress() + ". Phone number: " + ulubele.getNumber() + ". Email: " + ulubele.getEmail() +
-                    ". Bank account: " + ulubele.getBankDetails() +". ");
-            System.out.println("Shelter \"" + dzīvniekuDraugs.getShelterName() + "\". Address: " + dzīvniekuDraugs.getAddress() + ". Phone number: " + dzīvniekuDraugs.getNumber() + ". Email: " + dzīvniekuDraugs.getEmail() +
-                    ". Bank account: " + dzīvniekuDraugs.getBankDetails() + ". ");
-            System.out.println("Shelter \"" + labāsMājas.getShelterName() + "\". Address: " + labāsMājas.getAddress() + ". Phone number: " + labāsMājas.getNumber() + ". Email: " + labāsMājas.getEmail() +
-                    ". Bank account: " + labāsMājas.getBankDetails() + ". ");
+            ulubele.getShelterDetails();
+            dzivniekuDraugs.getShelterDetails();
+            labasMajas.getShelterDetails();
         }
+
         public static void animalTransfer(){
         if (AnimalsCount.currentAnimalCountU > 200){
             System.out.println("Ulubele has reached it's max animal capacity. Animal Transfer/Volunteer fostering program needed. ");
@@ -183,24 +180,18 @@ public class Main {
             }
         }
         public static void animalsInShelters () {
-            AnimalsCount.countAnimals();
-            System.out.println("Animals entered all shelters: " + AnimalsCount.totalAnimalsInShelters + ". Animals adopted : " + AnimalsCount.totalAdoptedAnimals);
-            System.out.println("Current animal count in Ulubele: " + AnimalsCount.currentAnimalCountU);
-            System.out.println("Current animal count in Dzīvnieku Draugs: " + AnimalsCount.currentAnimalCountDD);
-            System.out.println("Current animal count in Labās Mājas: " + AnimalsCount.currentAnimalCountLM);
-
+            AnimalsCount.printAnimalStatistic();
             animalTransfer();
         }
 
         public static void animalsForVolunteers () {
-            AnimalsCount.countAnimals();
-            System.out.println("Dogs for walking in Ulubele " + AnimalsCount.dogsForVolunteersU);
-            System.out.println("Cats for petting in Ulubele " + AnimalsCount.catsForVolunteersU);
-            System.out.println("Dogs for walking in Dzīvnieku Draugs " + AnimalsCount.dogsForVolunteersDD);
-            System.out.println("Cats for petting in Dzīvnieku Draugs " + AnimalsCount.catsForVolunteersDD);
-            System.out.println("Dogs for walking in Labās Mājas " + AnimalsCount.dogsForVolunteersLM);
-            System.out.println("Cats for petting in Labās Mājas " + AnimalsCount.catsForVolunteersLM);
-            System.out.println("For volunteers please apply for shelter animal visit by calling certain shelter.");
+            System.out.println("Dogs for walking in Ulubele: " + AnimalsCount.dogsForVolunteersU);
+            System.out.println("Cats for petting in Ulubele: " + AnimalsCount.catsForVolunteersU);
+            System.out.println("Dogs for walking in Dzīvnieku Draugs: " + AnimalsCount.dogsForVolunteersDD);
+            System.out.println("Cats for petting in Dzīvnieku Draugs: " + AnimalsCount.catsForVolunteersDD);
+            System.out.println("Dogs for walking in Labās Mājas: " + AnimalsCount.dogsForVolunteersLM);
+            System.out.println("Cats for petting in Labās Mājas: " + AnimalsCount.catsForVolunteersLM);
+            System.out.println("Please apply for animal visit by calling certain shelter.");
 
         }
 

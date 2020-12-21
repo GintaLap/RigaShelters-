@@ -239,6 +239,12 @@ public class AnimalsCount {
             e.printStackTrace();
         }
     }
+    public static void printAnimalStatistic() {
+        System.out.println("Animals entered all shelters: " + AnimalsCount.totalAnimalsInShelters + ". Animals adopted : " + AnimalsCount.totalAdoptedAnimals);
+        System.out.println("Current animal amount in Ulubele: " + AnimalsCount.currentAnimalCountU);
+        System.out.println("Current animal amount in Dzīvnieku Draugs: " + AnimalsCount.currentAnimalCountDD);
+        System.out.println("Current animal amount in Labās Mājas: " + AnimalsCount.currentAnimalCountLM);
+    }
 
     public int currentAnimalCountUlubele() {
         return currentAnimalCountU;
