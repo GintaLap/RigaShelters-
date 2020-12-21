@@ -1,3 +1,8 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 public class Employee extends Person{
 
     private String position;
@@ -17,6 +22,30 @@ public class Employee extends Person{
         else
             this.salary = 1000;
 
+    }
+    public static void employeeRegistration() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Employee Registration");
+        System.out.println("Employee's name: ");
+        String personName = scan.nextLine();
+        System.out.println("Employee's surname: ");
+        String personSurname = scan.nextLine();
+        System.out.println("Employee's phone number: ");
+        int phoneNumber = scan.nextInt();
+        System.out.println("Employee's bank account details: ");
+        String bankAccountDetails = scan.nextLine();
+        System.out.println("Employee's job position: ");
+        String position = scan.nextLine();
+
+        String employeeRegistration = "Employee_Registration";
+        try (FileWriter fileWriter = new FileWriter("Employee_Registration", true)) {
+            PrintWriter writeIntoFile = new PrintWriter(fileWriter);
+            writeIntoFile.printf("%s %s %s %s %s \n", personName, personSurname, phoneNumber, bankAccountDetails, position);
+            fileWriter.close();
+            System.out.println("Employee is registered!");
+        } catch (IOException e) {
+            System.out.println("Connection failed!");
+        }
     }
 
     public double paySalary(BankAccount shelterAccount){
