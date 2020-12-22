@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         AnimalsCount.countAnimals();
+        System.out.println("Hello! Welcome to Riga Shelters application!");
         boolean quit = false;
         int choice;
         while (!quit) {
