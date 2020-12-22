@@ -18,9 +18,7 @@ public class Main {
             input.nextLine();
 
             switch (choice) {
-                case 0:
-                    printInstructions();
-                    break;
+
                 case 1:
                     employeeEntry();
                     break;
@@ -43,9 +41,7 @@ public class Main {
                 input.nextLine();
 
                 switch (choice2) {
-                    case 0:
-                        printInstructionsEmployees();
-                        break;
+
                     case 1:
                         shelterDetails();
                         break;
@@ -59,10 +55,10 @@ public class Main {
                         addExpense();
                         break;
                     case 5:
-                        shelterExpenses();// need to check if all needed info is in there
+                        shelterExpenses();
                         break;
                     case 6:
-                        shelterBankAccount();// need to check if all needed info is in there
+                        shelterBankAccount();
                         break;
                     case 7:
                         animalsForVolunteers();
@@ -86,9 +82,7 @@ public class Main {
                 input.nextLine();
 
                 switch (choice) {
-                    case 0:
-                        printInstructionsVolunteers();
-                        break;
+
                     case 1:
                         volunteerRegistration();
                         break;
@@ -165,7 +159,7 @@ public class Main {
                 System.out.print("Incorrect entry. Please enter number accordingly (1-3): ");
                 s = input.nextByte();
             }
-            System.out.println("Please specify purpose of expense");
+            System.out.println("Please specify purpose of expense(food, electricity, salary, medicalTreatment)");
             String purpose = input.next();
             System.out.println("Please specify expense amount in EUR: ");
             double amount = input.nextDouble();
@@ -259,7 +253,6 @@ public class Main {
 
     private static void printInstructionsEmployees() {
         System.out.println("\nPress ");
-        System.out.println("\t 0 - To print choice options.");
         System.out.println("\t 1 - To print Shelter details.");
         System.out.println("\t 2 - To assign animals to shelter.");
         System.out.println("\t 3 - To see animal statistics in shelters.");
@@ -272,7 +265,6 @@ public class Main {
     }
     private static void printInstructionsVolunteers() {
         System.out.println("\nPress ");
-        System.out.println("\t 0 - To print choice options.");
         System.out.println("\t 1 - To register for volunteering.");
         System.out.println("\t 2 - To make a donation.");
         System.out.println("\t 3 - To show animals for care/walking.");
@@ -281,7 +273,6 @@ public class Main {
     }
         private static void printInstructions () {
             System.out.println("\nPress ");
-            System.out.println("\t 0 - To print choice options.");
             System.out.println("\t 1 - To enter EMPLOYEE mode.");
             System.out.println("\t 2 - To enter VOLUNTEER mode.");
             System.out.println("\t 3 - To quit the application.");
